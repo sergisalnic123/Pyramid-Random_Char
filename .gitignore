@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+</head>
+
+<body>
+
+	<script type="application/javascript">
+
+		var abc = "abcdefghijklmnopkrstuvwxyz";
+		var num = prompt('Ingrese su nombre:','');
+
+
+		var piramid = pyramid(num);
+
+		function pyramid(num){
+
+        	for(var num1 =0; num1<=num; num1++){
+
+				document.write("<center>");
+        		var palabro = palabra_random(num1); 
+				var orbalap = reverse(palabro);
+				document.write(orbalap + " " + num1+ " " + palabro );
+				document.write("<br/>");
+        	}
+        }
+
+		function palabra_random(num1){
+
+			var random ="";
+
+			for (var i = 0; i< num1; i++){
+
+					var x = Math.floor((Math.random() * 25) + 1);
+					var letra = abc.charAt(x);
+					random += letra;
+				}		
+				return random;			
+		}
+
+		function reverse(x1){
+            return x1.split("").reverse().join("");
+        }         
+      
+		//console.log(palabro_random);
+
+	</script>
+</body>
